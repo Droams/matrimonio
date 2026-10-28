@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ✏️ MODIFICA QUI: titolo della pagina (anche quello che appare quando si condivide il link) -->
+<title>La nostra playlist · Elisa & Andrea</title>
+<meta property="og:title" content="La nostra playlist · Giulia & Marco">
+<meta property="og:description" content="Le canzoni del nostro matrimonio">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    /* ✏️ MODIFICA QUI: colori del matrimonio */
+    --bg: #f7f2ea;        /* sfondo */
+    --ink: #2f2a25;       /* testo */
+    --muted: #8a7f72;     /* testo secondario */
+    --accent: #b08d57;    /* dettagli (oro/salvia/ecc.) */
+    --card: #fffdf9;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Inter", system-ui, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px;
+  }
+  main {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  /* Vinile che gira */
+  .vinyl {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 32px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle, var(--bg) 0 4px, transparent 5px),
+      radial-gradient(circle, var(--accent) 0 30%, transparent 30.5%),
+      repeating-radial-gradient(circle, #1c1a18 0 2px, #2a2724 2px 4px);
+    box-shadow: 0 12px 30px rgba(47, 42, 37, .25);
+    animation: spin 6s linear infinite;
+    position: relative;
+  }
+  .vinyl::after { /* riflesso */
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255,255,255,.12), transparent 40%, transparent 60%, rgba(255,255,255,.06));
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .vinyl { animation: none; } }
+
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(40px, 12vw, 52px);
+    line-height: 1.05;
+    margin-bottom: 8px;
+  }
+  h1 .amp { font-style: italic; color: var(--accent); }
+  .date {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--muted);
+    margin-bottom: 36px;
+  }
+  .intro {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .buttons { display: grid; gap: 12px; }
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 18px 20px;
+    border-radius: 14px;
+    background: var(--card);
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    border: 1px solid rgba(47, 42, 37, .12);
+    box-shadow: 0 2px 6px rgba(47, 42, 37, .06);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover, .btn:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(47, 42, 37, .12);
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; flex: none; }
+  .spotify .dot { background: #1db954; }
+  .apple .dot { background: #fa2d48; }
+
+  footer {
+    margin-top: 40px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<main>
+  <div class="vinyl" aria-hidden="true"></div>
+
+  <p class="eyebrow">La colonna sonora del nostro sì</p>
+
+  <!-- ✏️ MODIFICA QUI: i vostri nomi -->
+  <h1>Giulia <span class="amp">&amp;</span> Marco</h1>
+
+  <!-- ✏️ MODIFICA QUI: la data -->
+  <p class="date">12 settembre 2027</p>
+
+  <p class="intro">Scegli dove ascoltarla:</p>
+
+  <div class="buttons">
+    <!-- ✏️ MODIFICA QUI: link della playlist Spotify (tra le virgolette di href) -->
+    <a class="btn spotify" href="https://open.spotify.com/playlist/INCOLLA-QUI">
+      <span class="dot"></span>Ascolta su Spotify
+    </a>
+
+    <!-- ✏️ MODIFICA QUI: link della playlist Apple Music -->
+    <a class="btn apple" href="https://music.apple.com/it/playlist/INCOLLA-QUI">
+      <span class="dot"></span>Ascolta su Apple Music
+    </a>
+  </div>
+
+  <footer>Grazie di cantare con noi ♡</footer>
+</main>
+</body>
+</html>
